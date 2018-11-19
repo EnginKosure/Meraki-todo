@@ -94,7 +94,7 @@ ul.todo-list li.todo-list__listitem {
   // justify-content: flex-start;
   justify-items: center;
   &.todo-list__listitem--done {
-    background: $red;
+    // background: $red;
     text-decoration: line-through $green1;
   }
   span {
@@ -151,6 +151,10 @@ ul.todo-list li.todo-list__listitem {
       color: $green1;
     }
     &:hover::before {
+      color: white;
+      background-color: $green1;
+    }
+    &.done::before {
       color: white;
       background-color: $green1;
     }
