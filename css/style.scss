@@ -8,7 +8,7 @@
 }
 body {
   margin-top: 50px;
-  background-color: #fff;
+  background-color: $gray;
 }
 
 .todo {
@@ -17,6 +17,7 @@ body {
   margin: 0 auto;
   padding: 0;
   width: 40%;
+  min-width: 420px;
   height: auto;
   background-color: $gray;
 }
@@ -29,7 +30,9 @@ form.todo-form {
   background-color: $green1;
   position: relative;
   margin-bottom: 20px;
+  box-shadow: 2px 2px 4px 2px lightgray;
   input.todo-form__input {
+    transition: all 300ms;
     width: 100%;
     height: 66px;
     line-height: 20px;
@@ -39,12 +42,16 @@ form.todo-form {
     border-top-right-radius: 50px;
     outline: none;
     // color: white;
-    padding: 23px 0 23px 23px;
+    padding: 23px 90px 23px 23px;
     border: 0;
-    opacity: 0.5;
+    background-color: rgba(white, 0.2);
+    // opacity: 0.5;
     &::placeholder {
-      // opacity: 1;
-      // color: #ffffff;
+      opacity: 1;
+      color: #ffffff;
+    }
+    .todo-form__input--error {
+      background-color: rgba(red, 0.8);
     }
   }
   a.todo-form__button {
@@ -74,45 +81,56 @@ ul.todo-list {
 }
 ul.todo-list li.todo-list__listitem {
   cursor: pointer;
-  margin: 10px 30px;
-  margin-bottom: 10px;
+  margin: 13px 20px;
   position: relative;
-  padding: 12px 8px 12px 0;
+  padding: 8px 8px 12px 0;
   background: #fff;
   border: 1px solid #fff;
   border-radius: 7px;
   font-size: 18px;
   transition: 0.2s;
   display: flex;
+  box-shadow: 2px 2px 4px 2px lightgray;
   // justify-content: flex-start;
   justify-items: center;
-  .todo-list__listitem--done {
+  &.todo-list__listitem--done {
     background: $red;
-    text-decoration: line-through;
+    text-decoration: line-through $green1;
   }
   span {
     padding-left: 20px;
     margin-right: auto;
+    padding-top: 16px;
+    padding-bottom: 8px;
   }
   a {
     position: relative;
-    background-color: red;
+    // background-color: red;
     font-size: 30px;
     position: relative;
     right: 0px;
     top: 0px;
     border-radius: 50px;
-    width: 40px;
-    height: 40px;
+    // width: 40px;
+    // height: 40px;
+    // margin-bottom: 50px;
 
     &::before {
       position: absolute;
       content: "\e800";
-      font-size: 25px;
+      font-size: 20px;
       font-family: "fontello";
-      color: $gray;
-      left: 0;
-      top: 0;
+      color: $gray2;
+      left: -100px;
+      top: 10px;
+      border-right: 2px solid #eff3f2;
+      padding-right: 18px;
+      width: 20px;
+      height: 34px;
+      margin-bottom: 50px;
+    }
+    &:hover::before {
+      color: $red;
     }
   }
   a:nth-child(2) {
@@ -120,11 +138,21 @@ ul.todo-list li.todo-list__listitem {
     &::before {
       position: absolute;
       content: "\e801";
-      font-size: 25px;
+      font-size: 20px;
       font-family: "fontello";
       color: $gray;
-      left: 0;
-      top: 0;
+      left: -46px;
+      top: 8px;
+      border: 2px solid $green1;
+      padding: 7px;
+      border-radius: 60px;
+      width: 20px;
+      height: 20px;
+      color: $green1;
+    }
+    &:hover::before {
+      color: white;
+      background-color: $green1;
     }
   }
 }
