@@ -125,7 +125,6 @@ ul.todo-list li.todo-list__listitem {
     border-radius: 50px;
     // width: 40px;
     // height: 40px;
-    // margin-bottom: 50px;
 
     &::before {
       position: absolute;
@@ -139,11 +138,13 @@ ul.todo-list li.todo-list__listitem {
       padding-right: 16px;
       width: 20px;
       height: 32px;
-      // margin-bottom: 50px;
     }
     &:hover::before {
       color: $red;
     }
+  }
+  .trashbin--deleted::before {
+    color: $red;
   }
   a:nth-child(2) {
     position: relative;
